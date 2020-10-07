@@ -29,6 +29,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell.batteryLabel.text = "Battery: \(batteryPrecentage) %"
         }
         
+        Networking.shared.fetchImage(url: currentCar.model?.photoUrl) { (data) in
+            if let data = data {
+                cell.carImage.image = UIImage(data: data)
+            }
+        }
+        
         return cell
     }
 }

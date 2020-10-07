@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import Foundation
 
 class Networking {
     
@@ -17,11 +18,24 @@ class Networking {
         request.responseDecodable(of: [Car].self) { (data) in
             switch data.result {
             case .success(let decodedResponse):
-                print(decodedResponse)
                 completion(decodedResponse)
             case .failure(let error):
                 print("Data fetch error: \(error)")
                 completion([])
+            }
+        }
+    }
+    
+    func fetchImage(url: String?, completion: @escaping (Data?)->()) {
+        let request = AF.request(url ?? "")
+            
+        request.response { (data) in
+            switch data.result {
+            case .success(let imageData):
+                completion(imageData)
+            case .failure(let error):
+                print("Image fetch error: \(error)")
+                completion(nil)
             }
         }
     }
