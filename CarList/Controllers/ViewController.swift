@@ -9,21 +9,29 @@ import UIKit
 
 class ViewController: UIViewController {
         
-    var carList: [Car] = [] {
-        didSet { tableView.reloadData() }
-    }
+    @IBOutlet weak var tableView: UITableView!
+    
+    var carList: [Car] = []
+//    {
+//        didSet { tableView.reloadData() }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        configureTablewView()
+        configureTableView()
         fetchCars()
     }
 
     private func fetchCars() {
         Networking.shared.fetchData { (result) in
             self.carList = result
+            self.tableView.reloadData()
         }
+    }
+    
+    private func configureTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
 }

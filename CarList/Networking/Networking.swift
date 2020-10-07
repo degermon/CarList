@@ -17,6 +17,7 @@ class Networking {
         request.responseDecodable(of: [Car].self) { (data) in
             switch data.result {
             case .success(let decodedResponse):
+                print(decodedResponse)
                 completion(decodedResponse)
             case .failure(let error):
                 print("Data fetch error: \(error)")
