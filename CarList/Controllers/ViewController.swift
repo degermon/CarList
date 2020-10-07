@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        registerCell()
         fetchCars()
     }
 
@@ -32,6 +33,11 @@ class ViewController: UIViewController {
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    private func registerCell() {
+        let nib = UINib(nibName: "CarCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "carCell")
     }
 
 }

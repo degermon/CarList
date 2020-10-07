@@ -9,10 +9,10 @@ import Foundation
 
 struct Car: Decodable {
     var id: Int?
-    var plateNubmer: String?
+    var plateNumber: String?
     var location: Location?
     var model: Model?
-    var batteryPrecentage: Int?
+    var batteryPercentage: Int?
     var batteryEstimatedDistance: Float?
     var isCharging: Bool?
     var servicePlusEGoPoints: Int?
