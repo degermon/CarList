@@ -6,33 +6,26 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
         
     @IBOutlet weak var tableView: UITableView!
-        
-    var carList: [Car] = []
-    {
-        didSet { tableView.reloadData() }
-    }
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
         registerCell()
+        setupCarListObserver()
+        setupCellConfiguration()
         fetchCars()
     }
 
     private func fetchCars() {
         Networking.shared.fetchCarData { (result) in
-            self.carList = result
-//            self.tableView.reloadData()
+            CarList.shared.list.accept(result)
         }
-    }
-    
-    private func configureTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
     }
     
     private func registerCell() {

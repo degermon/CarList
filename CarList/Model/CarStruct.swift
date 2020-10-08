@@ -30,20 +30,20 @@ struct Model: Decodable {
     var title: String?
     var photoUrl: String?
     var loyaltyPrize: Int?
-    var rate: Rate
+    var rate: Rate?
 }
 
 struct Rate: Decodable {
     var isWeekend: Bool?
     var currency: String?
     var currencySymbol: String?
-    var lease: Lease
-    var reservation: Reservation
+    var lease: Lease?
+    var reservation: Reservation?
 }
 
 struct Lease: Decodable {
-    var workdays: LeaseRate
-    var weekends: LeaseRate
+    var workdays: LeaseRate?
+    var weekends: LeaseRate?
     var kilometerPrice: Float?
     var freeKilometersPerDay: Int?
 }

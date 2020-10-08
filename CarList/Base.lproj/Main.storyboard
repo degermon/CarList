@@ -17,17 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dLZ-g8-0q3">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="5" y="49" width="404" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
-                            <constraint firstItem="dLZ-g8-0q3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Oy-8Y-TXP"/>
-                            <constraint firstItem="dLZ-g8-0q3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CAj-Ul-EuY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dLZ-g8-0q3" secondAttribute="trailing" id="Wum-9t-p7C"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dLZ-g8-0q3" secondAttribute="bottom" id="mis-uf-uS3"/>
+                            <constraint firstItem="dLZ-g8-0q3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="9Oy-8Y-TXP"/>
+                            <constraint firstItem="dLZ-g8-0q3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="CAj-Ul-EuY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dLZ-g8-0q3" secondAttribute="trailing" constant="5" id="Wum-9t-p7C"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dLZ-g8-0q3" secondAttribute="bottom" constant="5" id="mis-uf-uS3"/>
                         </constraints>
                     </view>
                     <connections>
@@ -42,6 +42,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

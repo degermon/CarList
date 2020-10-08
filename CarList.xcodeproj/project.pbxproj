@@ -10,11 +10,16 @@
 		6551D7A4252E11C900CD3A35 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D7A3252E11C900CD3A35 /* Alamofire */; };
 		6551D7AA252E122400CD3A35 /* UrlKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D7A9252E122400CD3A35 /* UrlKeeper.swift */; };
 		6551D7AF252E2B7C00CD3A35 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D7AE252E2B7C00CD3A35 /* Networking.swift */; };
-		6551D7DB252E3FB600CD3A35 /* ViewControllerTableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D7DA252E3FB600CD3A35 /* ViewControllerTableViewExt.swift */; };
 		6551D7DF252E418F00CD3A35 /* CarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6551D7DD252E418F00CD3A35 /* CarCell.xib */; };
 		6551D7E0252E418F00CD3A35 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D7DE252E418F00CD3A35 /* CarCell.swift */; };
 		6551D7E6252F545400CD3A35 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D7E5252F545400CD3A35 /* AlamofireImage */; };
 		6551D7EC252F5A3F00CD3A35 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D7EB252F5A3F00CD3A35 /* ImageCache.swift */; };
+		6551D7FD252F679F00CD3A35 /* CarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D7FC252F679F00CD3A35 /* CarList.swift */; };
+		6551D820252F6BAE00CD3A35 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D81F252F6BAE00CD3A35 /* RxSwift */; };
+		6551D822252F6BAE00CD3A35 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D821252F6BAE00CD3A35 /* RxRelay */; };
+		6551D824252F6BAE00CD3A35 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D823252F6BAE00CD3A35 /* RxCocoa */; };
+		6551D826252F6BAE00CD3A35 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D825252F6BAE00CD3A35 /* RxBlocking */; };
+		6551D82A252F6E8C00CD3A35 /* ViewControllerRxExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D829252F6E8C00CD3A35 /* ViewControllerRxExt.swift */; };
 		655CC236252D775D00D15340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CC235252D775D00D15340 /* AppDelegate.swift */; };
 		655CC238252D775D00D15340 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CC237252D775D00D15340 /* SceneDelegate.swift */; };
 		655CC23A252D775D00D15340 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CC239252D775D00D15340 /* ViewController.swift */; };
@@ -27,10 +32,11 @@
 /* Begin PBXFileReference section */
 		6551D7A9252E122400CD3A35 /* UrlKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlKeeper.swift; sourceTree = "<group>"; };
 		6551D7AE252E2B7C00CD3A35 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		6551D7DA252E3FB600CD3A35 /* ViewControllerTableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewExt.swift; sourceTree = "<group>"; };
 		6551D7DD252E418F00CD3A35 /* CarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarCell.xib; sourceTree = "<group>"; };
 		6551D7DE252E418F00CD3A35 /* CarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
 		6551D7EB252F5A3F00CD3A35 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		6551D7FC252F679F00CD3A35 /* CarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarList.swift; sourceTree = "<group>"; };
+		6551D829252F6E8C00CD3A35 /* ViewControllerRxExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRxExt.swift; sourceTree = "<group>"; };
 		655CC232252D775D00D15340 /* CarList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		655CC235252D775D00D15340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		655CC237252D775D00D15340 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +53,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6551D820252F6BAE00CD3A35 /* RxSwift in Frameworks */,
+				6551D826252F6BAE00CD3A35 /* RxBlocking in Frameworks */,
 				6551D7A4252E11C900CD3A35 /* Alamofire in Frameworks */,
+				6551D824252F6BAE00CD3A35 /* RxCocoa in Frameworks */,
+				6551D822252F6BAE00CD3A35 /* RxRelay in Frameworks */,
 				6551D7E6252F545400CD3A35 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				6551D7AE252E2B7C00CD3A35 /* Networking.swift */,
-				6551D7EB252F5A3F00CD3A35 /* ImageCache.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -67,7 +76,9 @@
 		6551D7B7252E2E7D00CD3A35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6551D7FC252F679F00CD3A35 /* CarList.swift */,
 				655CC24E252D79E900D15340 /* CarStruct.swift */,
+				6551D7EB252F5A3F00CD3A35 /* ImageCache.swift */,
 				6551D7A9252E122400CD3A35 /* UrlKeeper.swift */,
 			);
 			path = Model;
@@ -77,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				655CC239252D775D00D15340 /* ViewController.swift */,
-				6551D7DA252E3FB600CD3A35 /* ViewControllerTableViewExt.swift */,
+				6551D829252F6E8C00CD3A35 /* ViewControllerRxExt.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -91,13 +102,13 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		6551D7E8252F567F00CD3A35 /* TableCell */ = {
+		6551D7E8252F567F00CD3A35 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				6551D7DE252E418F00CD3A35 /* CarCell.swift */,
 				6551D7DD252E418F00CD3A35 /* CarCell.xib */,
 			);
-			path = TableCell;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		655CC229252D775D00D15340 = {
@@ -127,7 +138,7 @@
 				6551D7B7252E2E7D00CD3A35 /* Model */,
 				6551D7B6252E2E5D00CD3A35 /* Networking */,
 				6551D7BA252E2EB400CD3A35 /* Other */,
-				6551D7E8252F567F00CD3A35 /* TableCell */,
+				6551D7E8252F567F00CD3A35 /* Views */,
 			);
 			path = CarList;
 			sourceTree = "<group>";
@@ -151,6 +162,10 @@
 			packageProductDependencies = (
 				6551D7A3252E11C900CD3A35 /* Alamofire */,
 				6551D7E5252F545400CD3A35 /* AlamofireImage */,
+				6551D81F252F6BAE00CD3A35 /* RxSwift */,
+				6551D821252F6BAE00CD3A35 /* RxRelay */,
+				6551D823252F6BAE00CD3A35 /* RxCocoa */,
+				6551D825252F6BAE00CD3A35 /* RxBlocking */,
 			);
 			productName = CarList;
 			productReference = 655CC232252D775D00D15340 /* CarList.app */;
@@ -182,6 +197,7 @@
 			packageReferences = (
 				6551D7A2252E11C900CD3A35 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				6551D7E4252F545400CD3A35 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				6551D81E252F6BAE00CD3A35 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 655CC233252D775D00D15340 /* Products */;
 			projectDirPath = "";
@@ -211,11 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6551D82A252F6E8C00CD3A35 /* ViewControllerRxExt.swift in Sources */,
+				6551D7FD252F679F00CD3A35 /* CarList.swift in Sources */,
 				655CC23A252D775D00D15340 /* ViewController.swift in Sources */,
 				655CC24F252D79E900D15340 /* CarStruct.swift in Sources */,
 				655CC236252D775D00D15340 /* AppDelegate.swift in Sources */,
 				6551D7EC252F5A3F00CD3A35 /* ImageCache.swift in Sources */,
-				6551D7DB252E3FB600CD3A35 /* ViewControllerTableViewExt.swift in Sources */,
 				6551D7AF252E2B7C00CD3A35 /* Networking.swift in Sources */,
 				655CC238252D775D00D15340 /* SceneDelegate.swift in Sources */,
 				6551D7E0252E418F00CD3A35 /* CarCell.swift in Sources */,
@@ -369,6 +386,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R738Q22NX;
 				INFOPLIST_FILE = CarList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,6 +406,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R738Q22NX;
 				INFOPLIST_FILE = CarList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,6 +458,14 @@
 				minimumVersion = 4.1.0;
 			};
 		};
+		6551D81E252F6BAE00CD3A35 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -451,6 +478,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6551D7E4252F545400CD3A35 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
 			productName = AlamofireImage;
+		};
+		6551D81F252F6BAE00CD3A35 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6551D81E252F6BAE00CD3A35 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		6551D821252F6BAE00CD3A35 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6551D81E252F6BAE00CD3A35 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		6551D823252F6BAE00CD3A35 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6551D81E252F6BAE00CD3A35 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		6551D825252F6BAE00CD3A35 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6551D81E252F6BAE00CD3A35 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
