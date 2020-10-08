@@ -6,15 +6,14 @@
 //
 
 import Alamofire
+import AlamofireImage
 import Foundation
 
 class Networking {
-    
     static let shared = Networking()
-    
-    func fetchData(completion: @escaping ([Car])->()) {
+
+    func fetchCarData(completion: @escaping ([Car])->()) {
         let request = AF.request(UrlKeeper.carListUrl, method: .get)
-        
         request.responseDecodable(of: [Car].self) { (data) in
             switch data.result {
             case .success(let decodedResponse):
@@ -26,13 +25,12 @@ class Networking {
         }
     }
     
-    func fetchImage(url: String?, completion: @escaping (Data?)->()) {
-        let request = AF.request(url ?? "")
-            
-        request.response { (data) in
-            switch data.result {
-            case .success(let imageData):
-                completion(imageData)
+    func getImageFor(url: String?, completion: @escaping (Image?)->()) {
+        let request = AF.request(url ?? "", method: .get)
+        request.responseImage { (response) in
+            switch response.result {
+            case .success(let image):
+                completion(image)
             case .failure(let error):
                 print("Image fetch error: \(error)")
                 completion(nil)

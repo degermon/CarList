@@ -10,11 +10,11 @@ import UIKit
 class ViewController: UIViewController {
         
     @IBOutlet weak var tableView: UITableView!
-    
+        
     var carList: [Car] = []
-//    {
-//        didSet { tableView.reloadData() }
-//    }
+    {
+        didSet { tableView.reloadData() }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +24,9 @@ class ViewController: UIViewController {
     }
 
     private func fetchCars() {
-        Networking.shared.fetchData { (result) in
+        Networking.shared.fetchCarData { (result) in
             self.carList = result
-            self.tableView.reloadData()
+//            self.tableView.reloadData()
         }
     }
     

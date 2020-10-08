@@ -16,22 +16,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "carCell", for: indexPath) as! CarCell
         
         let currentCar = carList[indexPath.row]
-        if let title = currentCar.model?.title {
-            cell.titleLabel.text = title
-        }
-        if let plateNumber = currentCar.plateNumber {
-            cell.plateNumber.text = plateNumber
-        }
-        if let address = currentCar.location?.address {
-            cell.locationLabel.text = address
-        }
-        if let batteryPrecentage = currentCar.batteryPercentage {
-            cell.batteryLabel.text = "Battery: \(batteryPrecentage) %"
-        }
+        cell.titleLabel.text = currentCar.model?.title ?? ""
+        cell.plateNumber.text = currentCar.plateNumber ?? ""
+        cell.locationLabel.text = currentCar.location?.address ?? ""
+        cell.batteryLabel.text = "Battery: \(currentCar.batteryPercentage ?? 0) %"
         
-        Networking.shared.fetchImage(url: currentCar.model?.photoUrl) { (data) in
-            if let data = data {
-                cell.carImage.image = UIImage(data: data)
+        ImageCache.shared.checkCacheForImageWith(key: currentCar.model?.photoUrl ?? "") { (image) in
+            if let image = image {
+                cell.carImage.image = image
             }
         }
         
