@@ -22,6 +22,7 @@
 		6551D82A252F6E8C00CD3A35 /* ViewControllerRxExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D829252F6E8C00CD3A35 /* ViewControllerRxExt.swift */; };
 		6551D833252F79D900CD3A35 /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D832252F79D900CD3A35 /* RxCoreLocation */; };
 		6551D836252F7BD900CD3A35 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D835252F7BD900CD3A35 /* Locations.swift */; };
+		6551D842252F9D6200CD3A35 /* CLLocationCoordinate2DExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D841252F9D6200CD3A35 /* CLLocationCoordinate2DExt.swift */; };
 		655CC236252D775D00D15340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CC235252D775D00D15340 /* AppDelegate.swift */; };
 		655CC238252D775D00D15340 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CC237252D775D00D15340 /* SceneDelegate.swift */; };
 		655CC23A252D775D00D15340 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CC239252D775D00D15340 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		6551D7FC252F679F00CD3A35 /* CarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarList.swift; sourceTree = "<group>"; };
 		6551D829252F6E8C00CD3A35 /* ViewControllerRxExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRxExt.swift; sourceTree = "<group>"; };
 		6551D835252F7BD900CD3A35 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		6551D841252F9D6200CD3A35 /* CLLocationCoordinate2DExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DExt.swift; sourceTree = "<group>"; };
 		655CC232252D775D00D15340 /* CarList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		655CC235252D775D00D15340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		655CC237252D775D00D15340 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		6551D840252F9D4800CD3A35 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6551D841252F9D6200CD3A35 /* CLLocationCoordinate2DExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		655CC229252D775D00D15340 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 			children = (
 				655CC23E252D776000D15340 /* Assets.xcassets */,
 				6551D7B9252E2E9700CD3A35 /* Controllers */,
+				6551D840252F9D4800CD3A35 /* Extensions */,
 				655CC243252D776000D15340 /* Info.plist */,
 				655CC240252D776000D15340 /* LaunchScreen.storyboard */,
 				655CC23B252D775D00D15340 /* Main.storyboard */,
@@ -239,6 +250,7 @@
 				655CC23A252D775D00D15340 /* ViewController.swift in Sources */,
 				655CC24F252D79E900D15340 /* CarStruct.swift in Sources */,
 				655CC236252D775D00D15340 /* AppDelegate.swift in Sources */,
+				6551D842252F9D6200CD3A35 /* CLLocationCoordinate2DExt.swift in Sources */,
 				6551D7EC252F5A3F00CD3A35 /* ImageCache.swift in Sources */,
 				6551D7AF252E2B7C00CD3A35 /* Networking.swift in Sources */,
 				655CC238252D775D00D15340 /* SceneDelegate.swift in Sources */,

@@ -65,5 +65,15 @@ class ViewController: UIViewController {
     
     @IBAction func sortByDistanceBtnTapped(_ sender: Any) {
         getcurrentLocation()
+        
+        let sortedCarList = CarList.shared.list.value.sorted { (car1, car2) -> Bool in
+            Locations.shared.distanceFrom(latitude: car1.location?.latitude, longitude: car1.location?.longitude, to: Locations.shared.usercoordinates)! < Locations.shared.distanceFrom(latitude: car2.location?.latitude, longitude: car2.location?.longitude, to: Locations.shared.usercoordinates)!
+        }
+        CarList.shared.list.accept(sortedCarList)
+        
+//        for item in CarList.shared.list.value { // for checking (temporary)
+//            let distance = Locations.shared.distanceFrom(latitude: item.location?.latitude, longitude: item.location?.longitude, to: Locations.shared.usercoordinates)
+//            print(Int(distance ?? 0))
+//        }
     }
 }

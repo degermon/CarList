@@ -9,6 +9,8 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RxCoreLocation
+import AlamofireImage
+import Alamofire
 
 extension ViewController {
     func setupCarListObserver() {
@@ -32,12 +34,31 @@ extension ViewController {
         }.disposed(by: disposeBag)
     }
     
+    func monitorAuthorization() {
+        locationManager.rx
+            .didChangeAuthorization
+            .subscribe(onNext: {_, status in
+                switch status {
+                case .denied:
+                    print("Authorization denied")
+                case .notDetermined:
+                    print("Authorization: not determined")
+                case .restricted:
+                    print("Authorization: restricted")
+                case .authorizedAlways, .authorizedWhenInUse:
+                    print("All good fire request")
+                @unknown default:
+                    print("Unknown")
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+    
     func getcurrentLocation() {
         locationManager.rx
             .location.take(1) // take 1 so only executed 1 time
             .subscribe(onNext: { location in
                 guard let location = location?.coordinate else { return }
-                print(location)
                 Locations.shared.usercoordinates = location
             })
             .disposed(by: disposeBag)
