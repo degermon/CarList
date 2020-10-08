@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,31 +18,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dLZ-g8-0q3">
-                                <rect key="frame" x="5" y="49" width="404" height="808"/>
+                                <rect key="frame" x="15" y="59" width="384" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne4-Kv-rLE">
+                                <rect key="frame" x="15" y="810" width="384" height="37"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <state key="normal" title="Sort by distance."/>
+                                <connections>
+                                    <action selector="sortByDistanceBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7un-Xa-aQF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
-                            <constraint firstItem="dLZ-g8-0q3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="9Oy-8Y-TXP"/>
-                            <constraint firstItem="dLZ-g8-0q3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="CAj-Ul-EuY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dLZ-g8-0q3" secondAttribute="trailing" constant="5" id="Wum-9t-p7C"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dLZ-g8-0q3" secondAttribute="bottom" constant="5" id="mis-uf-uS3"/>
+                            <constraint firstItem="Ne4-Kv-rLE" firstAttribute="top" secondItem="dLZ-g8-0q3" secondAttribute="bottom" constant="15" id="2LR-gQ-Pw4"/>
+                            <constraint firstItem="dLZ-g8-0q3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="3Ax-uh-Aqe"/>
+                            <constraint firstItem="dLZ-g8-0q3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="4mY-9O-fHw"/>
+                            <constraint firstItem="Ne4-Kv-rLE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-15" id="7fu-yp-pi9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dLZ-g8-0q3" secondAttribute="trailing" constant="15" id="QrG-AX-PMd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ne4-Kv-rLE" secondAttribute="trailing" constant="15" id="SMG-d4-C5X"/>
+                            <constraint firstItem="Ne4-Kv-rLE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="VmA-lg-VGC"/>
+                            <constraint firstItem="Ne4-Kv-rLE" firstAttribute="height" secondItem="dLZ-g8-0q3" secondAttribute="height" multiplier="1:20" id="zbb-AU-2zD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sortByDistanceButton" destination="Ne4-Kv-rLE" id="GyN-AY-XKa"/>
                         <outlet property="tableView" destination="dLZ-g8-0q3" id="4O4-Hw-Wgg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-174" y="17"/>
+            <point key="canvasLocation" x="-175.36231884057972" y="16.741071428571427"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxCoreLocation
 
 extension ViewController {
     func setupCarListObserver() {
@@ -30,4 +31,21 @@ extension ViewController {
                 }
         }.disposed(by: disposeBag)
     }
+    
+    func getcurrentLocation() {
+        locationManager.rx
+            .location.take(1) // take 1 so only executed 1 time
+            .subscribe(onNext: { location in
+                guard let location = location?.coordinate else { return }
+                print(location)
+                Locations.shared.usercoordinates = location
+            })
+            .disposed(by: disposeBag)
+    }
+    
+//    func setupButtonconfiguration() {
+//        sortByDistanceButton.rx.tap.bind{
+//            
+//        }.disposed(by: disposeBag)
+//    }
 }

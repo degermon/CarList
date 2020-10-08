@@ -20,6 +20,8 @@
 		6551D824252F6BAE00CD3A35 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D823252F6BAE00CD3A35 /* RxCocoa */; };
 		6551D826252F6BAE00CD3A35 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D825252F6BAE00CD3A35 /* RxBlocking */; };
 		6551D82A252F6E8C00CD3A35 /* ViewControllerRxExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D829252F6E8C00CD3A35 /* ViewControllerRxExt.swift */; };
+		6551D833252F79D900CD3A35 /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D832252F79D900CD3A35 /* RxCoreLocation */; };
+		6551D836252F7BD900CD3A35 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D835252F7BD900CD3A35 /* Locations.swift */; };
 		655CC236252D775D00D15340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CC235252D775D00D15340 /* AppDelegate.swift */; };
 		655CC238252D775D00D15340 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CC237252D775D00D15340 /* SceneDelegate.swift */; };
 		655CC23A252D775D00D15340 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CC239252D775D00D15340 /* ViewController.swift */; };
@@ -37,6 +39,7 @@
 		6551D7EB252F5A3F00CD3A35 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		6551D7FC252F679F00CD3A35 /* CarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarList.swift; sourceTree = "<group>"; };
 		6551D829252F6E8C00CD3A35 /* ViewControllerRxExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRxExt.swift; sourceTree = "<group>"; };
+		6551D835252F7BD900CD3A35 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		655CC232252D775D00D15340 /* CarList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		655CC235252D775D00D15340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		655CC237252D775D00D15340 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 				6551D824252F6BAE00CD3A35 /* RxCocoa in Frameworks */,
 				6551D822252F6BAE00CD3A35 /* RxRelay in Frameworks */,
 				6551D7E6252F545400CD3A35 /* AlamofireImage in Frameworks */,
+				6551D833252F79D900CD3A35 /* RxCoreLocation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +83,7 @@
 				6551D7FC252F679F00CD3A35 /* CarList.swift */,
 				655CC24E252D79E900D15340 /* CarStruct.swift */,
 				6551D7EB252F5A3F00CD3A35 /* ImageCache.swift */,
+				6551D835252F7BD900CD3A35 /* Locations.swift */,
 				6551D7A9252E122400CD3A35 /* UrlKeeper.swift */,
 			);
 			path = Model;
@@ -166,6 +171,7 @@
 				6551D821252F6BAE00CD3A35 /* RxRelay */,
 				6551D823252F6BAE00CD3A35 /* RxCocoa */,
 				6551D825252F6BAE00CD3A35 /* RxBlocking */,
+				6551D832252F79D900CD3A35 /* RxCoreLocation */,
 			);
 			productName = CarList;
 			productReference = 655CC232252D775D00D15340 /* CarList.app */;
@@ -198,6 +204,7 @@
 				6551D7A2252E11C900CD3A35 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				6551D7E4252F545400CD3A35 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				6551D81E252F6BAE00CD3A35 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				6551D831252F79D900CD3A35 /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
 			);
 			productRefGroup = 655CC233252D775D00D15340 /* Products */;
 			projectDirPath = "";
@@ -236,6 +243,7 @@
 				6551D7AF252E2B7C00CD3A35 /* Networking.swift in Sources */,
 				655CC238252D775D00D15340 /* SceneDelegate.swift in Sources */,
 				6551D7E0252E418F00CD3A35 /* CarCell.swift in Sources */,
+				6551D836252F7BD900CD3A35 /* Locations.swift in Sources */,
 				6551D7AA252E122400CD3A35 /* UrlKeeper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +474,14 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		6551D831252F79D900CD3A35 /* XCRemoteSwiftPackageReference "RxCoreLocation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxCoreLocation.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -498,6 +514,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6551D81E252F6BAE00CD3A35 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxBlocking;
+		};
+		6551D832252F79D900CD3A35 /* RxCoreLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6551D831252F79D900CD3A35 /* XCRemoteSwiftPackageReference "RxCoreLocation" */;
+			productName = RxCoreLocation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
