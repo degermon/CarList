@@ -45,16 +45,18 @@ extension ViewController {
     
     func setupCellConfiguration() { // setup table view
         CarList.shared.listToDisplay.bind(to: tableView.rx.items(cellIdentifier: "carCell", cellType: CarCell.self)) { row, car, cell in
-                cell.titleLabel.text = car.model?.title ?? ""
-                cell.plateNumber.text = car.plateNumber ?? ""
-                cell.locationLabel.text = car.location?.address ?? ""
-                cell.batteryLabel.text = "Battery: \(car.batteryPercentage ?? 0) %"
-                        
-                ImageCache.shared.checkCacheForImageWith(key: car.model?.photoUrl ?? "") { (image) in
-                    if let image = image {
-                        cell.carImage.image = image
-                    }
+            cell.titleLabel.text = car.model?.title ?? ""
+            cell.plateNumber.text = car.plateNumber ?? ""
+            cell.locationLabel.text = car.location?.address ?? ""
+            cell.batteryLabel.text = "Battery: \(car.batteryPercentage ?? 0) %"
+            cell.batteryEstimatedDistnce.text = "Estimated distance: \(Int(car.batteryEstimatedDistance ?? 0)) Km."
+            cell.distanceToCar.text = "Distance to car: \(Int(car.distanceToCar ?? 0)) m."
+            
+            ImageCache.shared.checkCacheForImageWith(key: car.model?.photoUrl ?? "") { (image) in
+                if let image = image {
+                    cell.carImage.image = image
                 }
+            }
         }.disposed(by: disposeBag)
     }
     

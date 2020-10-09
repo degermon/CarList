@@ -41,6 +41,8 @@ class ViewController: UIViewController {
         Networking.shared.fetchCarData { (result) in
             CarList.shared.fullList = result
             CarList.shared.listToDisplay.accept(result)
+            self.getcurrentLocation() // get current location first time
+            CarList.shared.getDistanceFromCurrent() // get distance based on current location
         }
     }
     
@@ -72,6 +74,7 @@ class ViewController: UIViewController {
     
     func resetCarListToShow() {
         CarList.shared.listToDisplay.accept(CarList.shared.fullList)
+//        searchBar.text = ""
     }
     
     func updateFilterByButtonTitle() {

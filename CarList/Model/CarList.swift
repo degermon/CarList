@@ -26,7 +26,7 @@ class CarList {
         for item in fullList { // for checking (temporary)
             let distance = Locations.shared.distanceFrom(latitude: item.location?.latitude, longitude: item.location?.longitude, to: Locations.shared.usercoordinates)
             var updatedCarItem = item
-            updatedCarItem.distance = distance
+            updatedCarItem.distanceToCar = distance
             newList.append(updatedCarItem)
         }
         fullList = newList
@@ -37,7 +37,7 @@ class CarList {
         var filteredCarList: [Car] = []
         for item in fullList {
             if let plateNumber = item.plateNumber {
-                if plateNumber.lowercased().contains(text) {
+                if plateNumber.lowercased().contains(text.lowercased()) {
                         filteredCarList.append(item)
                 }
             }
