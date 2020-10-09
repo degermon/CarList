@@ -19,6 +19,12 @@ extension ViewController {
         }.disposed(by: disposeBag)
     }
     
+    func setupfilterByObserver() {
+        filterBy.asObservable().subscribe { value in
+            self.searchField.placeholder = value + "..."
+        }.disposed(by: disposeBag)
+    }
+    
     func setupCellConfiguration() {
         CarList.shared.listToDisplay.bind(to: tableView.rx.items(cellIdentifier: "carCell", cellType: CarCell.self)) { row, car, cell in
                 cell.titleLabel.text = car.model?.title ?? ""
@@ -49,6 +55,13 @@ extension ViewController {
             self.getcurrentLocation()
             CarList.shared.sortByDistanceFromCurrent()
         }.disposed(by: disposeBag)
-
+        
+        resetAllButton.rx.tap.bind {
+            CarList.shared.listToDisplay.accept(CarList.shared.fullList)
+        }.disposed(by: disposeBag)
+        
+        filterByButton.rx.tap.bind{
+            self.filterByChoice()
+        }.disposed(by: disposeBag)
     }
 }

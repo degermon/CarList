@@ -11,7 +11,7 @@ import RxCocoa
 
 class CarList {
     static let shared = CarList()
-    var fullList: BehaviorRelay<[Car]> = BehaviorRelay(value: [])
+    var fullList: [Car] = []
     var listToDisplay: BehaviorRelay<[Car]> = BehaviorRelay(value: [])
     
     func sortByDistanceFromCurrent(){

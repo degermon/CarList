@@ -14,9 +14,13 @@ class ViewController: UIViewController {
         
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortByDistanceButton: UIButton!
+    @IBOutlet weak var resetAllButton: UIButton!
+    @IBOutlet weak var filterByButton: UIButton!
+    @IBOutlet weak var searchField: UISearchBar!
     
     let disposeBag = DisposeBag()
     let locationManager = CLLocationManager()
+    var filterBy: BehaviorRelay<String> = BehaviorRelay(value: "Plate number")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +28,9 @@ class ViewController: UIViewController {
         checkLocationPermissions()
         configureLocationManager()
         setupCarListObserver()
+        setupfilterByObserver()
         setupCellConfiguration()
         setupButtonconfiguration()
-//        setupPickerConfiguration()
         fetchCars()
     }
     
@@ -34,7 +38,7 @@ class ViewController: UIViewController {
 
     private func fetchCars() {
         Networking.shared.fetchCarData { (result) in
-            CarList.shared.fullList.accept(result)
+            CarList.shared.fullList = result
             CarList.shared.listToDisplay.accept(result)
         }
     }
@@ -63,5 +67,18 @@ class ViewController: UIViewController {
             } else {
                 print("Location services are not enabled")
         }
+    }
+    
+    func filterByChoice() {
+        let alert = UIAlertController(title: "Filter by:", message: nil, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Plate number", style: .default, handler: { (choice) in
+            self.filterBy.accept(choice.title!)
+        }))
+        alert.addAction(UIAlertAction(title: "Battery", style: .default, handler: { (choice) in
+            self.filterBy.accept(choice.title!)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
