@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortByDistanceButton: UIButton!
+    
     let disposeBag = DisposeBag()
     let locationManager = CLLocationManager()
     
@@ -24,6 +25,8 @@ class ViewController: UIViewController {
         configureLocationManager()
         setupCarListObserver()
         setupCellConfiguration()
+        setupButtonconfiguration()
+//        setupPickerConfiguration()
         fetchCars()
     }
     
@@ -31,7 +34,8 @@ class ViewController: UIViewController {
 
     private func fetchCars() {
         Networking.shared.fetchCarData { (result) in
-            CarList.shared.list.accept(result)
+            CarList.shared.fullList.accept(result)
+            CarList.shared.listToDisplay.accept(result)
         }
     }
     
@@ -59,21 +63,5 @@ class ViewController: UIViewController {
             } else {
                 print("Location services are not enabled")
         }
-    }
-    
-    // MARK: - Actions
-    
-    @IBAction func sortByDistanceBtnTapped(_ sender: Any) {
-        getcurrentLocation()
-        
-        let sortedCarList = CarList.shared.list.value.sorted { (car1, car2) -> Bool in
-            Locations.shared.distanceFrom(latitude: car1.location?.latitude, longitude: car1.location?.longitude, to: Locations.shared.usercoordinates)! < Locations.shared.distanceFrom(latitude: car2.location?.latitude, longitude: car2.location?.longitude, to: Locations.shared.usercoordinates)!
-        }
-        CarList.shared.list.accept(sortedCarList)
-        
-//        for item in CarList.shared.list.value { // for checking (temporary)
-//            let distance = Locations.shared.distanceFrom(latitude: item.location?.latitude, longitude: item.location?.longitude, to: Locations.shared.usercoordinates)
-//            print(Int(distance ?? 0))
-//        }
     }
 }
