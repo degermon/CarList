@@ -16,6 +16,7 @@ struct Car: Decodable {
     var batteryEstimatedDistance: Float?
     var isCharging: Bool?
     var servicePlusEGoPoints: Int?
+    var distance: Double? // added additional element to store distance
 }
 
 struct Location: Decodable {

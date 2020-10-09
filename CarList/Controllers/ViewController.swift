@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sortByDistanceButton: UIButton!
     @IBOutlet weak var resetAllButton: UIButton!
     @IBOutlet weak var filterByButton: UIButton!
-    @IBOutlet weak var searchField: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     let disposeBag = DisposeBag()
     let locationManager = CLLocationManager()
@@ -24,11 +24,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateFilterByButtonTitle()
         registerCell()
         checkLocationPermissions()
         configureLocationManager()
-        setupCarListObserver()
-        setupfilterByObserver()
+        setupObserver()
+        setupSearchConfiguration()
         setupCellConfiguration()
         setupButtonconfiguration()
         fetchCars()
@@ -69,14 +70,23 @@ class ViewController: UIViewController {
         }
     }
     
-    func filterByChoice() {
+    func resetCarListToShow() {
+        CarList.shared.listToDisplay.accept(CarList.shared.fullList)
+    }
+    
+    func updateFilterByButtonTitle() {
+        filterByButton.setTitle("Filter by: \(filterBy.value)", for: .normal)
+    }
+    
+    func filterByChoice() { // potato filter choice
         let alert = UIAlertController(title: "Filter by:", message: nil, preferredStyle: .alert)
-        
         alert.addAction(UIAlertAction(title: "Plate number", style: .default, handler: { (choice) in
             self.filterBy.accept(choice.title!)
+            self.updateFilterByButtonTitle()
         }))
         alert.addAction(UIAlertAction(title: "Battery", style: .default, handler: { (choice) in
             self.filterBy.accept(choice.title!)
+            self.updateFilterByButtonTitle()
         }))
         
         self.present(alert, animated: true, completion: nil)

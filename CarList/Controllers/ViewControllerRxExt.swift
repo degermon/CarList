@@ -13,19 +13,37 @@ import AlamofireImage
 import Alamofire
 
 extension ViewController {
-    func setupCarListObserver() {
-        CarList.shared.listToDisplay.asObservable().subscribe { (list) in
+    func setupObserver() {
+        CarList.shared.listToDisplay.asObservable().subscribe { (list) in // reload table view on change of listToDisplay array
             self.tableView.reloadData()
         }.disposed(by: disposeBag)
-    }
-    
-    func setupfilterByObserver() {
+        
         filterBy.asObservable().subscribe { value in
-            self.searchField.placeholder = value + "..."
+            self.searchBar.placeholder = value + "..."
         }.disposed(by: disposeBag)
     }
     
-    func setupCellConfiguration() {
+    func setupSearchConfiguration() { // setup search bar
+        searchBar.returnKeyType = .done
+        
+        searchBar.rx.text.orEmpty.subscribe { (querry) in // when entering/editing searchbar
+            guard querry.element != "" else { // if no text present
+                self.resetCarListToShow()
+                return
+            }
+            if self.filterBy.value == "Plate number" { // if filter by selected as plate number
+                CarList.shared.filterByPlateNumber(for: querry.element ?? "")
+            } else if self.filterBy.value == "Battery" { // or battery
+                CarList.shared.filterByBattery(for: querry.element ?? "")
+            }
+        }.disposed(by: disposeBag)
+                
+        searchBar.rx.searchButtonClicked.subscribe { (_) in // when done button is tapped, hide keyboard
+            self.searchBar.resignFirstResponder()
+        }.disposed(by: disposeBag)
+    }
+    
+    func setupCellConfiguration() { // setup table view
         CarList.shared.listToDisplay.bind(to: tableView.rx.items(cellIdentifier: "carCell", cellType: CarCell.self)) { row, car, cell in
                 cell.titleLabel.text = car.model?.title ?? ""
                 cell.plateNumber.text = car.plateNumber ?? ""
@@ -40,7 +58,7 @@ extension ViewController {
         }.disposed(by: disposeBag)
     }
     
-    func getcurrentLocation() {
+    func getcurrentLocation() { // get current location coordinates
         locationManager.rx
             .location.take(1) // take 1 so only executed 1 time
             .subscribe(onNext: { location in
@@ -57,7 +75,7 @@ extension ViewController {
         }.disposed(by: disposeBag)
         
         resetAllButton.rx.tap.bind {
-            CarList.shared.listToDisplay.accept(CarList.shared.fullList)
+            self.resetCarListToShow()
         }.disposed(by: disposeBag)
         
         filterByButton.rx.tap.bind{
