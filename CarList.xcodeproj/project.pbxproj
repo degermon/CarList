@@ -95,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				655CC239252D775D00D15340 /* ViewController.swift */,
-				6551D829252F6E8C00CD3A35 /* ViewControllerRxExt.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -122,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				6551D841252F9D6200CD3A35 /* CLLocationCoordinate2DExt.swift */,
+				6551D829252F6E8C00CD3A35 /* ViewControllerRxExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

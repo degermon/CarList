@@ -85,10 +85,12 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: "Filter by:", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Plate number", style: .default, handler: { (choice) in
             self.filterBy.accept(choice.title!)
+            self.checkSearchBarFor(text: self.searchBar.text)
             self.updateFilterByButtonTitle()
         }))
         alert.addAction(UIAlertAction(title: "Battery", style: .default, handler: { (choice) in
             self.filterBy.accept(choice.title!)
+            self.checkSearchBarFor(text: self.searchBar.text)
             self.updateFilterByButtonTitle()
         }))
         

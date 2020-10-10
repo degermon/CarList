@@ -47,7 +47,7 @@ class CarList {
     
     func filterByBattery(for text: String) {
         var filteredCarList: [Car] = []
-        let filterBattery = Int(text) ?? 0 // in invalid conversion to int, set as 0
+        let filterBattery = Int(text) ?? 101 // in invalid conversion to int, set as 101 more than max so no items are returned
         for item in fullList {
             if let battery = item.batteryPercentage {
                 if battery >= filterBattery {
