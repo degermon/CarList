@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		650CB40325320B4400B83410 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CB40225320B4400B83410 /* RoundedButton.swift */; };
+		650CB40D25320E0700B83410 /* CarListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CB40C25320E0700B83410 /* CarListTests.swift */; };
 		6551D7A4252E11C900CD3A35 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D7A3252E11C900CD3A35 /* Alamofire */; };
 		6551D7AA252E122400CD3A35 /* UrlKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D7A9252E122400CD3A35 /* UrlKeeper.swift */; };
 		6551D7AF252E2B7C00CD3A35 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D7AE252E2B7C00CD3A35 /* Networking.swift */; };
@@ -33,8 +34,21 @@
 		655CC24F252D79E900D15340 /* CarStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655CC24E252D79E900D15340 /* CarStruct.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		650CB40F25320E0700B83410 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655CC22A252D775D00D15340 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 655CC231252D775D00D15340;
+			remoteInfo = CarList;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		650CB40225320B4400B83410 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		650CB40A25320E0700B83410 /* CarListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		650CB40C25320E0700B83410 /* CarListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListTests.swift; sourceTree = "<group>"; };
+		650CB40E25320E0700B83410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6551D7A9252E122400CD3A35 /* UrlKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlKeeper.swift; sourceTree = "<group>"; };
 		6551D7AE252E2B7C00CD3A35 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		6551D7DD252E418F00CD3A35 /* CarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarCell.xib; sourceTree = "<group>"; };
@@ -56,6 +70,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		650CB40725320E0700B83410 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		655CC22F252D775D00D15340 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -73,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		650CB40B25320E0700B83410 /* CarListTests */ = {
+			isa = PBXGroup;
+			children = (
+				650CB40C25320E0700B83410 /* CarListTests.swift */,
+				650CB40E25320E0700B83410 /* Info.plist */,
+			);
+			path = CarListTests;
+			sourceTree = "<group>";
+		};
 		6551D7B6252E2E5D00CD3A35 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				655CC234252D775D00D15340 /* CarList */,
+				650CB40B25320E0700B83410 /* CarListTests */,
 				655CC233252D775D00D15340 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				655CC232252D775D00D15340 /* CarList.app */,
+				650CB40A25320E0700B83410 /* CarListTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +197,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		650CB40925320E0700B83410 /* CarListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 650CB41125320E0700B83410 /* Build configuration list for PBXNativeTarget "CarListTests" */;
+			buildPhases = (
+				650CB40625320E0700B83410 /* Sources */,
+				650CB40725320E0700B83410 /* Frameworks */,
+				650CB40825320E0700B83410 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				650CB41025320E0700B83410 /* PBXTargetDependency */,
+			);
+			name = CarListTests;
+			productName = CarListTests;
+			productReference = 650CB40A25320E0700B83410 /* CarListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		655CC231252D775D00D15340 /* CarList */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 655CC246252D776000D15340 /* Build configuration list for PBXNativeTarget "CarList" */;
@@ -200,6 +250,10 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					650CB40925320E0700B83410 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 655CC231252D775D00D15340;
+					};
 					655CC231252D775D00D15340 = {
 						CreatedOnToolsVersion = 12.0.1;
 					};
@@ -225,11 +279,19 @@
 			projectRoot = "";
 			targets = (
 				655CC231252D775D00D15340 /* CarList */,
+				650CB40925320E0700B83410 /* CarListTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		650CB40825320E0700B83410 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		655CC230252D775D00D15340 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,6 +306,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		650CB40625320E0700B83410 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				650CB40D25320E0700B83410 /* CarListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		655CC22E252D775D00D15340 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,6 +336,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		650CB41025320E0700B83410 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 655CC231252D775D00D15340 /* CarList */;
+			targetProxy = 650CB40F25320E0700B83410 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		655CC23B252D775D00D15340 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -286,6 +364,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		650CB41225320E0700B83410 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7R738Q22NX;
+				INFOPLIST_FILE = CarListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.degermon.CarListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarList.app/CarList";
+			};
+			name = Debug;
+		};
+		650CB41325320E0700B83410 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7R738Q22NX;
+				INFOPLIST_FILE = CarListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.degermon.CarListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarList.app/CarList";
+			};
+			name = Release;
+		};
 		655CC244252D776000D15340 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -445,6 +563,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		650CB41125320E0700B83410 /* Build configuration list for PBXNativeTarget "CarListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				650CB41225320E0700B83410 /* Debug */,
+				650CB41325320E0700B83410 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		655CC22D252D775D00D15340 /* Build configuration list for PBXProject "CarList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

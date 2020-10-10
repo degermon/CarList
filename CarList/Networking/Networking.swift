@@ -36,5 +36,6 @@ class Networking {
                 completion(nil)
             }
         }
+        completion(nil) // no image received
     }
 }
