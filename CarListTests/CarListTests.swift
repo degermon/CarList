@@ -73,4 +73,33 @@ class CarListTests: XCTestCase {
             XCTFail()
         }
     }
+    
+    func testGetDistanceFromCurrentLocation() {
+        Locations.shared.usercoordinates = .init(latitude: 55.22, longitude: 55.22)
+        sut2.fullList = [Car.init(location: .init(latitude: 55.21, longitude: 55.21)), Car.init(location: .init(latitude: 55.20, longitude: 55.20)), Car.init(location: .init(latitude: 55.23, longitude: 55.23))]
+        let expectedResult = [1282, 2564, 1282]
+        
+        sut2.getDistanceFromCurrent()
+        
+        if sut2.fullList.count == expectedResult.count {
+            for i in 0...expectedResult.count - 1 {
+                XCTAssertEqual(Int(sut2.fullList[i].distanceToCar!), expectedResult[i], "Get distance to car not working")
+            }
+        } else {
+            XCTFail()
+        }
+    }
+    
+    func testSortByDistance() {
+        Locations.shared.usercoordinates = .init(latitude: 55.22, longitude: 55.22)
+        sut2.listToDisplay.accept([Car.init(id: 1, location: .init(latitude: 55.55, longitude: 55.67)), Car.init(id: 2, location: .init(latitude: 55.20, longitude: 55.20)), Car.init(id: 3, location: .init(latitude: 55.30, longitude: 55.33)), Car.init(id: 4, location: .init(latitude: 55.23, longitude: 55.23))])
+        let expectedResult = [4, 2, 3, 1]
+        
+        sut2.sortByDistanceFromCurrent()
+        let sortedList = sut2.listToDisplay.value
+        
+        for i in 0...expectedResult.count - 1 {
+            XCTAssertEqual(sortedList[i].id, expectedResult[i], "Sorted by distance not working")
+        }
+    }
 }
