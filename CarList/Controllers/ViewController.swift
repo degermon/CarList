@@ -33,9 +33,16 @@ class ViewController: UIViewController {
         setupCellConfiguration()
         setupButtonconfiguration()
         fetchCars()
+        round()
     }
     
     // MARK: - Config
+    
+    func round() {
+        tableView.layer.cornerRadius = 15
+        searchBar.layer.cornerRadius = 15
+        searchBar.clipsToBounds = true
+    }
 
     private func fetchCars() {
         Networking.shared.fetchCarData { (result) in

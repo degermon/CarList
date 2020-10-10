@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650CB40325320B4400B83410 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CB40225320B4400B83410 /* RoundedButton.swift */; };
 		6551D7A4252E11C900CD3A35 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6551D7A3252E11C900CD3A35 /* Alamofire */; };
 		6551D7AA252E122400CD3A35 /* UrlKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D7A9252E122400CD3A35 /* UrlKeeper.swift */; };
 		6551D7AF252E2B7C00CD3A35 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551D7AE252E2B7C00CD3A35 /* Networking.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		650CB40225320B4400B83410 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		6551D7A9252E122400CD3A35 /* UrlKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlKeeper.swift; sourceTree = "<group>"; };
 		6551D7AE252E2B7C00CD3A35 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		6551D7DD252E418F00CD3A35 /* CarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarCell.xib; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				6551D7DE252E418F00CD3A35 /* CarCell.swift */,
 				6551D7DD252E418F00CD3A35 /* CarCell.xib */,
+				650CB40225320B4400B83410 /* RoundedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				6551D7E0252E418F00CD3A35 /* CarCell.swift in Sources */,
 				6551D836252F7BD900CD3A35 /* Locations.swift in Sources */,
 				6551D7AA252E122400CD3A35 /* UrlKeeper.swift in Sources */,
+				650CB40325320B4400B83410 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

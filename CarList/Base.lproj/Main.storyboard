@@ -21,16 +21,16 @@
                                 <rect key="frame" x="15" y="125" width="384" height="635.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne4-Kv-rLE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne4-Kv-rLE" customClass="RoundedButton" customModule="CarList" customModuleProvider="target">
                                 <rect key="frame" x="15" y="775.5" width="384" height="31.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Sort by distance."/>
+                                <state key="normal" title="Sort by distance"/>
                             </button>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HO4-ql-6ZI">
-                                <rect key="frame" x="186" y="59" width="213" height="56"/>
+                                <rect key="frame" x="185.5" y="59" width="213.5" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIS-og-xoa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIS-og-xoa" customClass="RoundedButton" customModule="CarList" customModuleProvider="target">
                                 <rect key="frame" x="15" y="59" width="160.5" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -38,7 +38,7 @@
                                 </constraints>
                                 <state key="normal" title="Filter by:"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="240-gh-A5q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="240-gh-A5q" customClass="RoundedButton" customModule="CarList" customModuleProvider="target">
                                 <rect key="frame" x="15" y="817" width="384" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Reset all">
