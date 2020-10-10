@@ -41,7 +41,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="240-gh-A5q" customClass="RoundedButton" customModule="CarList" customModuleProvider="target">
                                 <rect key="frame" x="15" y="817" width="384" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Reset all">
+                                <state key="normal" title="Reset ">
                                     <color key="titleColor" red="0.97448861750000004" green="0.23151751819999999" blue="0.084493083600000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>

@@ -64,7 +64,9 @@ class ViewController: UIViewController {
         locationManager.startUpdatingLocation()
     }
     
-    private func checkLocationPermissions() { // Add respective allerts
+    // MARK: - Methods
+    
+    private func checkLocationPermissions() { // Add respective allerts if needed
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
                 case .notDetermined, .restricted, .denied:
@@ -81,11 +83,23 @@ class ViewController: UIViewController {
     
     func resetCarListToShow() {
         CarList.shared.listToDisplay.accept(CarList.shared.fullList)
-//        searchBar.text = ""
+        searchBar.text = ""
     }
     
     func updateFilterByButtonTitle() {
         filterByButton.setTitle("Filter by: \(filterBy.value)", for: .normal)
+    }
+    
+    func checkSearchBarFor(text: String?) { // check searchBar
+        guard text != "" else { // if no text present
+            resetCarListToShow()
+            return
+        }
+        if filterBy.value == "Plate number" { // if filter by selected as plate number
+            CarList.shared.filterByPlateNumber(for: text ?? "")
+        } else if filterBy.value == "Battery" { // or battery
+            CarList.shared.filterByBattery(for: text ?? "")
+        }
     }
     
     func filterByChoice() { // potato filter choice
